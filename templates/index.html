@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interest Rate Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Interest Rate Calculator</h1>
+        <form action="{% url 'calculate' %}" method="post">
+            {% csrf_token %}
+            <label for="principle">Principle Amount:</label>
+            <input type="number" id="principle" name="principle" required><br>
+
+            <label for="rate">Rate of Interest:</label>
+            <input type="number" id="rate" name="rate" required><br>
+
+            <label for="time">Time (in years):</label>
+            <input type="number" id="time" name="time" required><br>
+
+            <input type="submit" value="Calculate">
+        </form>
+    </div>
+</body>
+</html>
